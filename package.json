@@ -1,13 +1,13 @@
 {
-  "name": "dev",
+  "name": "never-ending-vr-walk",
   "version": "1.0.0",
-  "description": "",
+  "description": "A VR walking outside that never ends.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Pedro Serapio <pedro.serapio@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "aframe": "^0.7.1"
