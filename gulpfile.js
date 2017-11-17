@@ -7,7 +7,6 @@ const gulp       = require('gulp'),
       minifyCSS  = require('gulp-clean-css'),
       prefixer   = require('gulp-autoprefixer'),
       eyeglass   = require('eyeglass'),
-      uglify     = require('gulp-uglify'),
       del        = require('del');
 
 const base_path  = './',
@@ -51,19 +50,10 @@ gulp.task('sass', function(){
     .pipe(gulp.dest(dist + '/css/'));
 });
 
-gulp.task('aframe-components', function(){
-  return gulp.src(src + '/javascript/aframe-components.js')
-    .pipe(webpack())
-    .pipe(uglify())
-    .pipe(rename('aframe-components.min.js'))
-    .pipe(gulp.dest(dist + '/js/'));
-});
-
-gulp.task('bootstrap', function(){
-  return gulp.src(src + '/javascript/bootstrap.js')
-    .pipe(webpack())
-    .pipe(uglify())
-    .pipe(rename('bootstrap.min.js'))
+gulp.task('app-scripts', function(){
+  return gulp.src( src + '/javascript/app.js' )
+    .pipe(webpack( require('./webpack.config.js' )))
+    .pipe(rename('app.min.js'))
     .pipe(gulp.dest(dist + '/js/'));
 });
 
@@ -72,5 +62,5 @@ gulp.task('clean', function(){
 });
 
 gulp.task('default', ['clean'], function(){
-  gulp.start('html', 'threed-models', 'sass', 'aframe-components', 'bootstrap');
+  gulp.start('html', 'threed-models', 'sass', 'app-scripts');
 });

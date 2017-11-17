@@ -103,9 +103,9 @@
     }
   </style>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/nunjucks/3.0.1/nunjucks.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/0.6.1/aframe-master.min.js"></script>
-  <script src="assets/js/aframe-components.min.js"></script>
+  <script src="assets/js/app.min.js"></script>
 </head>
 <body>
   <!-- Preloader -->
@@ -143,10 +143,10 @@
   <a-scene preloader="autoInject: false; clickToClose: false; autoClose: true; target: #preloader-modal; bar: #preloader-modal .progress-bar; label: #preloader-modal .progress-label; labelText: Loading {0}%; doneLabelText: Done! Hold tight...;">
     <a-assets timeout="10000">
       <a-asset-item id="earth" src="assets/threedmodels/gltf-models/earth-model.gltf" preload="true"></a-asset-item>
-      <a-asset-item id="tree" src="assets/threedmodels/gltf-models/tree_smoth-model.gltf" preload="true"></a-asset-item>
-      <a-asset-item id="big-house" src="assets/threedmodels/gltf-models/big_house-model.gltf" preload="true"></a-asset-item>
-      <a-asset-item id="small-house" src="assets/threedmodels/gltf-models/small_house-model.gltf" preload="true"></a-asset-item>
-      <a-asset-item id="cloud" src="assets/threedmodels/gltf-models/cloud_smoth-model.gltf" preload="true"></a-asset-item>
+      <a-asset-item id="tree" src="assets/threedmodels/gltf-models/tree-smoth-model.gltf" preload="true"></a-asset-item>
+      <a-asset-item id="big-house" src="assets/threedmodels/gltf-models/big-house-model.gltf" preload="true"></a-asset-item>
+      <a-asset-item id="small-house" src="assets/threedmodels/gltf-models/small-house-model.gltf" preload="true"></a-asset-item>
+      <a-asset-item id="cloud" src="assets/threedmodels/gltf-models/cloud-smoth-model.gltf" preload="true"></a-asset-item>
       <a-asset-item id="car" src="assets/threedmodels/gltf-models/car-model.gltf" preload="true"></a-asset-item>
 
       <script id="treeTemplate" type="text/x-nunjucks-template">
@@ -298,7 +298,5 @@
     </a-entity>
   </a-scene>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="assets/js/bootstrap.min.js"></script>
 </body>
 </html>

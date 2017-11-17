@@ -11,6 +11,7 @@
   "license": "MIT",
   "dependencies": {
     "@gladeye/aframe-preloader-component": "^1.0.2",
+    "aframe": "^0.6.1",
     "aframe-animation-component": "^3.2.5",
     "aframe-template-component": "^3.2.1",
     "bootstrap-sass": "^3.3.7"
@@ -23,7 +24,7 @@
     "gulp-clean-css": "^3.9.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
-    "gulp-uglify": "^3.0.0",
+    "uglifyjs-webpack-plugin": "^1.0.1",
     "webpack": "^3.8.1",
     "webpack-stream": "^4.0.0"
   }
