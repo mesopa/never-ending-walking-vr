@@ -4,16 +4,16 @@
  * version 2.0 files and the camera position bug it's fixed.
  */
 
-require('./aframe-master.min');
+require('aframe');
 
 /*
  * A-Frame Components.
  *
  */
 
-require('aframe-animation-component');
-require('aframe-template-component');
-require('@gladeye/aframe-preloader-component');
+require('aframe-animation-component')
+require('aframe-template-component')
+require('@gladeye/aframe-preloader-component')
 
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)

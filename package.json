@@ -11,21 +11,22 @@
   "license": "MIT",
   "dependencies": {
     "@gladeye/aframe-preloader-component": "^1.0.2",
-    "aframe": "^0.6.1",
-    "aframe-animation-component": "^3.2.5",
+    "aframe": "^0.8.2",
+    "aframe-animation-component": "^5.1.2",
     "aframe-template-component": "^3.2.1",
     "bootstrap-sass": "^3.3.7"
   },
   "devDependencies": {
     "del": "^3.0.0",
     "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^4.0.0",
-    "gulp-clean-css": "^3.9.0",
-    "gulp-connect": "^5.0.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^3.1.0",
-    "uglifyjs-webpack-plugin": "^1.0.1",
-    "webpack": "^3.8.1",
-    "webpack-stream": "^4.0.0"
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-clean-css": "^3.10.0",
+    "gulp-connect": "^5.6.1",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.1",
+    "uglifyjs-webpack-plugin": "^2.0.1",
+    "webpack": "^4.20.2",
+    "webpack-stream": "^5.1.1"
   }
 }
