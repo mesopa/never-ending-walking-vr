@@ -18,9 +18,9 @@ The never-ending walk VR Walk it's my playground built using the simple and stro
 Framework Used
 --------------
 
-* [Aframe 0.6.1](https://rawgit.com/aframevr/aframe/ba7d108/dist/aframe-master.min.js)
+* [A-FRAME](https://aframe.io/)
 
-I use this specific build because of the camera height changes every time user enters in VR mode, a well-known issue presented in the latest build. You can read more about it [here](https://github.com/aframevr/aframe/issues/3051)
+~~I use this specific build because of the camera height changes every time user enters in VR mode, a well-known issue presented in the latest build. You can read more about it [here](https://github.com/aframevr/aframe/issues/3051)~~
 
 Components
 ----------
