@@ -1,60 +1,58 @@
+// -----------------
+// Project Variables
+// -----------------
 
+const { src, dest, series, parallel, watch } = require('gulp');
 
-const gulp       = require('gulp'),
-      webpack    = require('webpack-stream'),
+const webpack    = require('webpack-stream'),
       sass       = require('gulp-sass'),
       minifyCSS  = require('gulp-clean-css'),
       htmlmin    = require('gulp-htmlmin'),
-      prefixer   = require('gulp-autoprefixer'),
       connect    = require('gulp-connect'),
       rename     = require('gulp-rename'),
       del        = require('del');
 
 const base_path  = '',
-      src        = base_path + 'dev/src',
+      source     = base_path + 'dev/src',
       dist       = base_path + 'docs';
 
-gulp.task('connect', () => {
+// -------------
+// Project Tasks
+// -------------
+
+// Local Server
+function connectServer() {
   connect.server({
     root: dist,
     livereload: true
   });
-});
+};
 
-gulp.task('html', () => {
-  return gulp.src(src + '/*.html')
+function html() {
+  return src( source + '/*.html' )
     .pipe( htmlmin({
       collapseWhitespace: true,
       minifyCSS: true
     }))
-    .pipe( gulp.dest( dist + '/'))
+    .pipe( dest( dist + '/'))
     .pipe( connect.reload());
-});
+};
 
-gulp.task('images', () => {
-  return gulp.src( src + '/images/**/*' )
-    .pipe( gulp.dest( dist + '/assets/images/' ))
+function images() {
+  return src( source + '/images/**/*' )
+    .pipe( dest( dist + '/assets/images/' ) )
     .pipe( connect.reload());
-});
+};
 
-gulp.task('threed-models', () => {
-  return gulp.src( src + '/threedmodels/**/*')
-    .pipe( gulp.dest(dist + '/assets/threedmodels/'))
-});
+function threedModels() {
+  return src( source + '/threedmodels/**/*' )
+    .pipe( dest(dist + '/assets/threedmodels/') )
+};
 
-gulp.task('sass', () => {
-  return gulp.src(src + '/stylesheet/*.scss')
+function sassStyles() {
+  return src( source + '/stylesheet/*.scss' )
     .pipe( sass({
       includePaths: ['node_modules/bootstrap-sass/assets/stylesheets/bootstrap']
-    }))
-    .pipe( prefixer({
-      browsers: [
-        'last 2 versions',
-        '> 1%',
-        'opera 12.1',
-        'bb 10',
-        'android 4'
-        ]
     }))
     .pipe( minifyCSS({
       level: {1: {specialComments: 0}}
@@ -62,36 +60,42 @@ gulp.task('sass', () => {
     .pipe( rename({
       suffix: '.min'
     }))
-    .pipe( gulp.dest(dist + '/assets/css/'))
+    .pipe( dest(dist + '/assets/css/'))
     .pipe( connect.reload());
-});
+};
 
-gulp.task('app-scripts', () => {
-  return gulp.src( src + '/javascript/app.js' )
+function appScripts() {
+  return src( source + '/javascript/app.js' )
     .pipe( webpack( require('./webpack.config.js' )))
     .pipe( rename('app.min.js'))
-    .pipe( gulp.dest(dist + '/assets/js/'))
+    .pipe( dest(dist + '/assets/js/'))
     .pipe( connect.reload());
-});
+};
 
-gulp.task('clean', () => {
+function clean() {
   return del('docs/*');
-});
+};
 
-gulp.task('watch', () => {
-  gulp.watch( src + '/*.html', ['html'] );
-  gulp.watch( src + '/stylesheet/*.scss', ['sass'] );
-  gulp.watch( src + '/javascript/app.js', ['app-scripts'] );
-});
+// -- WATCH          --
+function watchFiles() {
+  watch( source + '/*.html', html );
+  watch( source + '/stylesheet/*.scss', sassStyles );
+  watch( source + '/javascript/app.js', appScripts );
+};
 
-gulp.task('default', ['clean'], () => {
-  gulp.start(
-    'html',
-    'images',
-    'threed-models',
-    'sass',
-    'app-scripts',
-    'connect',
-    'watch'
-  );
-});
+// ------------------------------
+// -- Project `default` Gulp Task
+// ------------------------------
+
+exports.default = series(
+  clean,
+  html,
+  images,
+  threedModels,
+  sassStyles,
+  appScripts,
+  parallel(
+    watchFiles,
+    connectServer,
+  ),
+);
