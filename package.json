@@ -1,43 +1,22 @@
 {
   "name": "never-ending-vr-walk",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A VR walking outside that never ends.",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "keywords": [],
   "author": "Pedro Serapio <pedro.serapio@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@gladeye/aframe-preloader-component": "^1.0.2",
-    "aframe": "^1.2.0",
-    "aframe-animation-component": "^5.1.2",
-    "aframe-template-component": "^3.2.1",
-    "bootstrap-sass": "^3.3.7"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "aframe": "^1.7.1",
+    "aframe-template-component": "^3.2.2"
   },
   "devDependencies": {
-    "del": "^6.0.0",
-    "gulp": "^4.0.2",
-    "gulp-clean-css": "^4.3.0",
-    "gulp-connect": "^5.6.1",
-    "gulp-htmlmin": "^5.0.1",
-    "gulp-rename": "^2.0.0",
-    "gulp-sass": "^4.0.1",
-    "uglifyjs-webpack-plugin": "^2.0.1",
-    "webpack": "^5.37.0",
-    "webpack-stream": "^6.1.2"
+    "sass": "^1.80.7",
+    "vite": "^5.4.11"
   }
 }

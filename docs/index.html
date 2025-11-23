@@ -1,18 +1,315 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta http-equiv="X-UA-Compatible" content="ie=edge"><title>The Never Ending VR Walk Experiment | MeSopa Minisite | VR Prototype</title><meta name="description" content="The never-ending walking, VR experience built on well-known Mozilla A-Frame"><link rel="canonical" href="https://mesopa.github.io/never-ending-walking-vr/"><meta name="author" content="Pedro Serapio"><link rel="icon" type="image/png" sizes="64x64" href="https://mesopa.github.io/never-ending-walking-vr/assets/images/common/icons/icon64.png"><link rel="apple-touch-icon" sizes="180x180" href="https://mesopa.github.io/never-ending-walking-vr/assets/images/common/icons/icon180.png"><meta name="msapplication-square70x70logo" content="https://mesopa.github.io/never-ending-walking-vr/assets/images/common/icons/icon70.png"><meta name="msapplication-square150x150logo" content="https://mesopa.github.io/never-ending-walking-vr/assets/images/common/icons/icon150.png"><meta name="msapplication-square310x310logo" content="https://mesopa.github.io/never-ending-walking-vr/assets/images/common/icons/icon310.png"><meta name="msapplication-wide310x150logo" content="https://mesopa.github.io/never-ending-walking-vr/assets/images/common/icons/icon-rect-310.png"><meta name="msapplication-TileColor" content="#374140"><meta property="og:locale" content="en_US"><meta property="og:type" content="website"><meta property="og:title" content="The Never Ending VR Walk Experiment | MeSopa Minisite | VR Prototype"><meta property="og:description" content="The never-ending walking, VR experience built on well-known Mozilla A-Frame."><meta property="og:url" content="https://mesopa.github.io/never-ending-walking-vr/"><meta property="og:site_name" content="Never Ending VR Walk Prototype"><meta property="og:image" content="https://mesopa.github.io/never-ending-walking-vr/assets/images/common/vr-never-ending-walk-opengraph.jpg"><meta property="og:image:secure_url" content="https://mesopa.github.io/never-ending-walking-vr/assets/images/common/vr-never-ending-walk-opengraph.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Never Ending VR Walk Prototype Opengraph"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:description" content="The never-ending walking, VR experience built on well-known Mozilla A-Frame."><meta name="twitter:title" content="The Never Ending VR Walk Experiment | MeSopa Minisite | VR Prototype"><meta name="twitter:image" content="https://mesopa.github.io/never-ending-walking-vr/assets/images/common/vr-never-ending-walk-opengraph.jpg"><link rel="stylesheet" href="assets/css/bootstrap.min.css"><style>.a-body,.modal-content,body{background-color:#252525;color:#6d6d6d}#preloader-modal .preloader-modal__spinner{display:inline-block;margin-bottom:2em}#preloader-modal .preloader-modal__spinner{transform:scale3d(2,2,1)}#preloader-modal .btn{margin-top:2em}.sk-cube-grid{width:40px;height:40px;margin:40px auto}.sk-cube-grid .sk-cube{width:33.33%;height:33.33%;background-color:#333;float:left;-webkit-animation:sk-cubeGridScaleDelay 1.3s infinite ease-in-out;animation:sk-cubeGridScaleDelay 1.3s infinite ease-in-out}.sk-cube-grid .sk-cube1{-webkit-animation-delay:.2s;animation-delay:.2s}.sk-cube-grid .sk-cube2{-webkit-animation-delay:.3s;animation-delay:.3s}.sk-cube-grid .sk-cube3{-webkit-animation-delay:.4s;animation-delay:.4s}.sk-cube-grid .sk-cube4{-webkit-animation-delay:.1s;animation-delay:.1s}.sk-cube-grid .sk-cube5{-webkit-animation-delay:.2s;animation-delay:.2s}.sk-cube-grid .sk-cube6{-webkit-animation-delay:.3s;animation-delay:.3s}.sk-cube-grid .sk-cube7{-webkit-animation-delay:0ms;animation-delay:0ms}.sk-cube-grid .sk-cube8{-webkit-animation-delay:.1s;animation-delay:.1s}.sk-cube-grid .sk-cube9{-webkit-animation-delay:.2s;animation-delay:.2s}@-webkit-keyframes sk-cubeGridScaleDelay{0%,100%,70%{-webkit-transform:scale3D(1,1,1);transform:scale3D(1,1,1)}35%{-webkit-transform:scale3D(0,0,1);transform:scale3D(0,0,1)}}@keyframes sk-cubeGridScaleDelay{0%,100%,70%{-webkit-transform:scale3D(1,1,1);transform:scale3D(1,1,1)}35%{-webkit-transform:scale3D(0,0,1);transform:scale3D(0,0,1)}}#preloader-modal .preloader-modal__spinner.sk-cube-grid .sk-cube{background-color:#b90707}#preloader-modal.preloader-modal__complete .preloader-modal__spinner.sk-cube-grid .sk-cube{background-color:#1b771b}</style><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script><script src="https://mozilla.github.io/nunjucks/files/nunjucks.min.js"></script><script src="assets/js/app.min.js"></script></head><body><!-- Preloader --><div id="preloader-modal" class="modal instructions-modal" tabindex="-1" role="dialog" style="display:none"><div class="modal-dialog modal-dialog__full" role="document"><div class="modal-content vertical-align text-center"><div class="col-md-6 col-md-offset-3"><div class="row"><div class="col-sm-12"><h4>Loading The Never Ending Walk VR Experiment</h4><div class="preloader-modal__spinner sk-cube-grid" aria-hidden="true"><div class="sk-cube sk-cube1"></div><div class="sk-cube sk-cube2"></div><div class="sk-cube sk-cube3"></div><div class="sk-cube sk-cube4"></div><div class="sk-cube sk-cube5"></div><div class="sk-cube sk-cube6"></div><div class="sk-cube sk-cube7"></div><div class="sk-cube sk-cube8"></div><div class="sk-cube sk-cube9"></div></div></div></div><div class="row"><div class="col-sm-12"><span class="progress-label">Loading 0%</span></div></div></div></div></div></div><!-- Aframe Scene --><a-scene preloader="autoInject: false; clickToClose: false; autoClose: true; target: #preloader-modal; bar: #preloader-modal .progress-bar; label: #preloader-modal .progress-label; labelText: Loading {0}%; doneLabelText: Done! Hold tight...;"><a-assets timeout="10000"><a-asset-item id="earth" src="assets/threedmodels/gltf-models/earth-model.gltf" preload="true"></a-asset-item><a-asset-item id="tree" src="assets/threedmodels/gltf-models/tree-smoth-model.gltf" preload="true"></a-asset-item><a-asset-item id="big-house" src="assets/threedmodels/gltf-models/big-house-model.gltf" preload="true"></a-asset-item><a-asset-item id="small-house" src="assets/threedmodels/gltf-models/small-house-model.gltf" preload="true"></a-asset-item><a-asset-item id="cloud" src="assets/threedmodels/gltf-models/cloud-smoth-model.gltf" preload="true"></a-asset-item><a-asset-item id="car" src="assets/threedmodels/gltf-models/car-model.gltf" preload="true"></a-asset-item><script id="treeTemplate" type="text/x-nunjucks-template"><a-entity gltf-model="#tree"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>The Never Ending VR Walk Experiment | MeSopa Minisite | VR Prototype</title>
+  <meta name="description" content="The never-ending walking, VR experience built on well-known Mozilla A-Frame">
+
+  <link rel="canonical" href="https://mesopa.github.io/never-ending-walking-vr/">
+
+  <meta name="author" content="Pedro Serapio">
+
+  <link rel="icon" type="image/png" sizes="64x64" href="https://mesopa.github.io/never-ending-walking-vr/assets/images/common/icons/icon64.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://mesopa.github.io/never-ending-walking-vr/assets/images/common/icons/icon180.png">
+  <meta name="msapplication-square70x70logo" content="https://mesopa.github.io/never-ending-walking-vr/assets/images/common/icons/icon70.png">
+  <meta name="msapplication-square150x150logo" content="https://mesopa.github.io/never-ending-walking-vr/assets/images/common/icons/icon150.png">
+  <meta name="msapplication-square310x310logo" content="https://mesopa.github.io/never-ending-walking-vr/assets/images/common/icons/icon310.png">
+  <meta name="msapplication-wide310x150logo" content="https://mesopa.github.io/never-ending-walking-vr/assets/images/common/icons/icon-rect-310.png">
+  <meta name="msapplication-TileColor" content="#374140">
+
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="The Never Ending VR Walk Experiment | MeSopa Minisite | VR Prototype" />
+  <meta property="og:description" content="The never-ending walking, VR experience built on well-known Mozilla A-Frame." />
+  <meta property="og:url" content="https://mesopa.github.io/never-ending-walking-vr/" />
+  <meta property="og:site_name" content="Never Ending VR Walk Prototype" />
+  <meta property="og:image" content="https://mesopa.github.io/never-ending-walking-vr/assets/images/common/vr-never-ending-walk-opengraph.jpg" />
+  <meta property="og:image:secure_url" content="https://mesopa.github.io/never-ending-walking-vr/assets/images/common/vr-never-ending-walk-opengraph.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Never Ending VR Walk Prototype Opengraph" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:description" content="The never-ending walking, VR experience built on well-known Mozilla A-Frame." />
+  <meta name="twitter:title" content="The Never Ending VR Walk Experiment | MeSopa Minisite | VR Prototype" />
+  <meta name="twitter:image" content="https://mesopa.github.io/never-ending-walking-vr/assets/images/common/vr-never-ending-walk-opengraph.jpg" />
+
+  <style>
+    body, .a-body, .modal-content {
+      background-color: #252525;
+      color: #6d6d6d;
+    }
+
+    #preloader-modal .preloader-modal__spinner{
+      display: inline-block;
+      margin-bottom: 2em;
+    }
+
+    #preloader-modal .preloader-modal__spinner{
+      transform: scale3d(2,2,1);
+    }
+
+    #preloader-modal .btn{
+      margin-top: 2em;
+    }
+
+    /* Spinkit */
+
+    .sk-cube-grid {
+      width: 40px;
+      height: 40px;
+      margin: 40px auto;
+      /*
+      * Spinner positions
+      * 1 2 3
+      * 4 5 6
+      * 7 8 9
+      */ }
+    .sk-cube-grid .sk-cube {
+      width: 33.33%;
+      height: 33.33%;
+      background-color: #333;
+      float: left;
+      -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+              animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out; }
+    .sk-cube-grid .sk-cube1 {
+      -webkit-animation-delay: 0.2s;
+              animation-delay: 0.2s; }
+    .sk-cube-grid .sk-cube2 {
+      -webkit-animation-delay: 0.3s;
+              animation-delay: 0.3s; }
+    .sk-cube-grid .sk-cube3 {
+      -webkit-animation-delay: 0.4s;
+              animation-delay: 0.4s; }
+    .sk-cube-grid .sk-cube4 {
+      -webkit-animation-delay: 0.1s;
+              animation-delay: 0.1s; }
+    .sk-cube-grid .sk-cube5 {
+      -webkit-animation-delay: 0.2s;
+              animation-delay: 0.2s; }
+    .sk-cube-grid .sk-cube6 {
+      -webkit-animation-delay: 0.3s;
+              animation-delay: 0.3s; }
+    .sk-cube-grid .sk-cube7 {
+      -webkit-animation-delay: 0.0s;
+              animation-delay: 0.0s; }
+    .sk-cube-grid .sk-cube8 {
+      -webkit-animation-delay: 0.1s;
+              animation-delay: 0.1s; }
+    .sk-cube-grid .sk-cube9 {
+      -webkit-animation-delay: 0.2s;
+              animation-delay: 0.2s; }
+
+    @-webkit-keyframes sk-cubeGridScaleDelay {
+      0%, 70%, 100% {
+        -webkit-transform: scale3D(1, 1, 1);
+                transform: scale3D(1, 1, 1); }
+      35% {
+        -webkit-transform: scale3D(0, 0, 1);
+                transform: scale3D(0, 0, 1); } }
+
+    @keyframes sk-cubeGridScaleDelay {
+      0%, 70%, 100% {
+        -webkit-transform: scale3D(1, 1, 1);
+                transform: scale3D(1, 1, 1); }
+      35% {
+        -webkit-transform: scale3D(0, 0, 1);
+                transform: scale3D(0, 0, 1); } }
+
+    /* SPINKIT CUSTOMIZATION CLASSES */
+
+    /* sk-cube-grid */
+
+    #preloader-modal .preloader-modal__spinner.sk-cube-grid .sk-cube{
+      background-color: #b90707;
+    }
+
+    #preloader-modal.preloader-modal__complete .preloader-modal__spinner.sk-cube-grid .sk-cube{
+      background-color: #1b771b;
+    }
+  </style>
+  <script type="module" crossorigin src="/assets/main-CE1HwYrv.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/main-3rx9Nr0B.css">
+</head>
+<body>
+  <!-- Preloader -->
+  <div id="preloader-modal" class="modal instructions-modal" data-preloader tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
+    <div class="modal-content">
+      <h4>Loading The Never Ending Walk VR Experiment</h4>
+      <div class="preloader-modal__spinner sk-cube-grid" aria-hidden="true">
+        <div class="sk-cube sk-cube1"></div>
+        <div class="sk-cube sk-cube2"></div>
+        <div class="sk-cube sk-cube3"></div>
+        <div class="sk-cube sk-cube4"></div>
+        <div class="sk-cube sk-cube5"></div>
+        <div class="sk-cube sk-cube6"></div>
+        <div class="sk-cube sk-cube7"></div>
+        <div class="sk-cube sk-cube8"></div>
+        <div class="sk-cube sk-cube9"></div>
+      </div>
+      <span class="progress-label">Loading 0%</span>
+    </div>
+  </div>
+
+  <!-- Aframe Scene -->
+  <a-scene>
+    <a-assets timeout="10000">
+      <a-asset-item id="earth" src="assets/threedmodels/gltf-models/earth-model.gltf" preload="true"></a-asset-item>
+      <a-asset-item id="tree" src="assets/threedmodels/gltf-models/tree-smoth-model.gltf" preload="true"></a-asset-item>
+      <a-asset-item id="big-house" src="assets/threedmodels/gltf-models/big-house-model.gltf" preload="true"></a-asset-item>
+      <a-asset-item id="small-house" src="assets/threedmodels/gltf-models/small-house-model.gltf" preload="true"></a-asset-item>
+      <a-asset-item id="cloud" src="assets/threedmodels/gltf-models/cloud-smoth-model.gltf" preload="true"></a-asset-item>
+      <a-asset-item id="car" src="assets/threedmodels/gltf-models/car-model.gltf" preload="true"></a-asset-item>
+
+      <script id="treeTemplate" type="text/x-nunjucks-template">
+        <a-entity gltf-model="#tree"
           position="0 0 0"
-          scale="1 1 1"></a-entity></script><script id="bigHouseTemplate" type="text/x-nunjucks-template"><a-entity gltf-model="#big-house"
+          scale="1 1 1"></a-entity>
+      </script>
+
+      <script id="bigHouseTemplate" type="text/x-nunjucks-template">
+        <a-entity gltf-model="#big-house"
           position="0 0 0"
-          scale="1 1 1"></a-entity></script><script id="smallHouseTemplate" type="text/x-nunjucks-template"><a-entity gltf-model="#small-house"
+          scale="1 1 1"></a-entity>
+      </script>
+
+      <script id="smallHouseTemplate" type="text/x-nunjucks-template">
+        <a-entity gltf-model="#small-house"
           position="0 0 0"
-          scale="0.5 0.5 0.5"></a-entity></script><script id="cloudTemplate" type="text/x-nunjucks-template"><a-entity gltf-model="#cloud"
+          scale="0.5 0.5 0.5"></a-entity>
+      </script>
+
+      <script id="cloudTemplate" type="text/x-nunjucks-template">
+        <a-entity gltf-model="#cloud"
           position="0 0 0"
-          scale="2 2 2"></a-entity></script></a-assets><a-entity id="main-camera" position="0 1.6 0" camera look-controls></a-entity><a-sky color="#D9CB9E"></a-sky><!-- Clouds --><a-entity position="7 3 -10" rotation="0 0 0" animation="property: rotation; dur: 15000;
-      easing: linear; loop: true; to: 0 360 0"><a-entity rotation="0 0 0"><a-entity template="src: #cloudTemplate" position="4 0 0" rotation="0 90 0"></a-entity></a-entity><a-entity rotation="0 90 0"><a-entity template="src: #cloudTemplate" position="4 0 0" rotation="0 90 0"></a-entity></a-entity><a-entity rotation="0 180 0"><a-entity template="src: #cloudTemplate" position="4 0 0" rotation="0 90 0"></a-entity></a-entity><a-entity rotation="0 270 0"><a-entity template="src: #cloudTemplate" position="4 0 0" rotation="0 90 0"></a-entity></a-entity></a-entity><!-- Clouds --><a-entity position="-7 3 -10" rotation="0 0 0" animation="property: rotation; dur: 15000;
-      easing: linear; loop: true; to: 0 -360 0"><a-entity rotation="0 0 0"><a-entity template="src: #cloudTemplate" position="4 0 0" rotation="0 90 0"></a-entity></a-entity><a-entity rotation="0 90 0"><a-entity template="src: #cloudTemplate" position="4 0 0" rotation="0 90 0"></a-entity></a-entity><a-entity rotation="0 180 0"><a-entity template="src: #cloudTemplate" position="4 0 0" rotation="0 90 0"></a-entity></a-entity><a-entity rotation="0 270 0"><a-entity template="src: #cloudTemplate" position="4 0 0" rotation="0 90 0"></a-entity></a-entity></a-entity><!-- Earth --><a-entity gltf-model="#earth" position="0 -4.35 0" rotation="0 0 0" scale="1 1 1" animation="property: rotation; dur: 10000;
-                  easing: linear; loop: true; to: 360 0 0"></a-entity><!-- Car --><a-entity gltf-model="#car" position="0 .3 0" rotation="5 180 0" scale="1 1 1"></a-entity><!-- Houses --><a-entity position="0 -4.35 0" rotation="0 0 -30" animation="property: rotation; dur: 7000;
-      easing: linear; loop: true; to: 360 0 -30"><a-entity position="0 0 0" rotation="25 10 0"><a-entity template="src: #bigHouseTemplate" position="0 4.9 0"></a-entity></a-entity></a-entity><a-entity position="0 -4.35 0" rotation="0 0 30" animation="property: rotation; dur: 7000;
-      easing: linear; loop: true; to: 360 0 30"><a-entity position="0 0 0" rotation="25 0 0"><a-entity template="src: #smallHouseTemplate" position="0 4.9 0" rotation="0 170 0"></a-entity></a-entity></a-entity><!-- Trees --><a-entity position="0 -4.35 0" rotation="0 0 -25" animation="property: rotation; dur: 7000;
-      easing: linear; loop: true; to: 360 0 -25"><a-entity template="src: #treeTemplate" position="0 4.8 0"></a-entity></a-entity><a-entity position="0 -4.35 0" rotation="0 0 -45" animation="property: rotation; dur: 10000;
-      easing: linear; loop: true; to: 360 0 -45"><a-entity template="src: #treeTemplate" position="0 4.8 0"></a-entity></a-entity><a-entity position="0 -4.35 0" rotation="0 0 45" animation="property: rotation; dur: 9000;
-      easing: linear; loop: true; to: 360 0 45"><a-entity template="src: #treeTemplate" position="0 4.8 0"></a-entity></a-entity><a-entity position="0 -4.35 0" rotation="0 0 25" animation="property: rotation; dur: 5000;
-      easing: linear; loop: true; to: 360 0 25"><a-entity template="src: #treeTemplate" position="0 4.8 0"></a-entity></a-entity></a-scene></body></html>
+          scale="2 2 2"></a-entity>
+      </script>
+    </a-assets>
+    <a-entity id="main-camera" position="0 1.6 0" camera look-controls></a-entity>
+    <a-sky color="#D9CB9E"></a-sky>
+
+    <!-- Clouds -->
+    <a-entity
+      position="7 3 -10"
+      rotation="0 0 0"
+      animation="property: rotation; dur: 15000;
+      easing: linear; loop: true; to: 0 360 0">
+      <a-entity rotation="0 0 0">
+        <a-entity template="src: #cloudTemplate" position="4 0 0" rotation="0 90 0"></a-entity>
+      </a-entity>
+      <a-entity rotation="0 90 0">
+        <a-entity template="src: #cloudTemplate" position="4 0 0" rotation="0 90 0"></a-entity>
+      </a-entity>
+      <a-entity rotation="0 180 0">
+        <a-entity template="src: #cloudTemplate" position="4 0 0" rotation="0 90 0"></a-entity>
+      </a-entity>
+      <a-entity rotation="0 270 0">
+        <a-entity template="src: #cloudTemplate" position="4 0 0" rotation="0 90 0"></a-entity>
+      </a-entity>
+    </a-entity>
+
+    <!-- Clouds -->
+    <a-entity
+      position="-7 3 -10"
+      rotation="0 0 0"
+      animation="property: rotation; dur: 15000;
+      easing: linear; loop: true; to: 0 -360 0">
+      <a-entity rotation="0 0 0">
+        <a-entity template="src: #cloudTemplate" position="4 0 0" rotation="0 90 0"></a-entity>
+      </a-entity>
+      <a-entity rotation="0 90 0">
+        <a-entity template="src: #cloudTemplate" position="4 0 0" rotation="0 90 0"></a-entity>
+      </a-entity>
+      <a-entity rotation="0 180 0">
+        <a-entity template="src: #cloudTemplate" position="4 0 0" rotation="0 90 0"></a-entity>
+      </a-entity>
+      <a-entity rotation="0 270 0">
+        <a-entity template="src: #cloudTemplate" position="4 0 0" rotation="0 90 0"></a-entity>
+      </a-entity>
+    </a-entity>
+
+    <!-- Earth -->
+    <a-entity gltf-model="#earth"
+      position="0 -4.35 0"
+      rotation="0 0 0"
+      scale="1 1 1"
+      
+      animation="property: rotation; dur: 10000;
+                  easing: linear; loop: true; to: 360 0 0"
+      ></a-entity>
+
+    <!-- Car -->
+    <a-entity gltf-model="#car"
+      position="0 .3 0"
+      rotation="5 180 0"
+      scale="1 1 1"></a-entity>
+
+    <!-- Houses -->
+    <a-entity
+      position="0 -4.35 0"
+      rotation="0 0 -30"
+      animation="property: rotation; dur: 7000;
+      easing: linear; loop: true; to: 360 0 -30">
+      <a-entity
+        position="0 0 0"
+        rotation="25 10 0">
+        <a-entity template="src: #bigHouseTemplate"
+          position="0 4.9 0"></a-entity>
+      </a-entity>
+    </a-entity>
+
+    <a-entity
+      position="0 -4.35 0"
+      rotation="0 0 30"
+      animation="property: rotation; dur: 7000;
+      easing: linear; loop: true; to: 360 0 30">
+      <a-entity
+        position="0 0 0"
+        rotation="25 0 0">
+        <a-entity template="src: #smallHouseTemplate"
+          position="0 4.9 0"
+          rotation="0 170 0"></a-entity>
+      </a-entity>
+    </a-entity>
+
+    <!-- Trees -->
+    <a-entity
+      position="0 -4.35 0"
+      rotation="0 0 -25"
+      animation="property: rotation; dur: 7000;
+      easing: linear; loop: true; to: 360 0 -25">
+      <a-entity template="src: #treeTemplate"
+        position="0 4.8 0"></a-entity>
+    </a-entity>
+
+    <a-entity
+      position="0 -4.35 0"
+      rotation="0 0 -45"
+      animation="property: rotation; dur: 10000;
+      easing: linear; loop: true; to: 360 0 -45">
+      <a-entity template="src: #treeTemplate"
+        position="0 4.8 0"></a-entity>
+    </a-entity>
+
+    <a-entity
+      position="0 -4.35 0"
+      rotation="0 0 45"
+      animation="property: rotation; dur: 9000;
+      easing: linear; loop: true; to: 360 0 45">
+      <a-entity template="src: #treeTemplate"
+        position="0 4.8 0"></a-entity>
+    </a-entity>
+
+    <a-entity
+      position="0 -4.35 0"
+      rotation="0 0 25"
+      animation="property: rotation; dur: 5000;
+      easing: linear; loop: true; to: 360 0 25">
+      <a-entity template="src: #treeTemplate"
+        position="0 4.8 0"></a-entity>
+    </a-entity>
+  </a-scene>
+
+</body>
+</html>
