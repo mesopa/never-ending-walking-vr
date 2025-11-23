@@ -65,10 +65,10 @@ never-ending-walking-vr/
 ## Features
 
 ✨ **Modern Development Experience**
-- ⚡ Lightning-fast dev server with Vite
-- 🔥 Instant hot module reloading (HMR)
-- 📦 Optimized production builds
-- 🎨 Modern SCSS compilation
+- Lightning-fast dev server with Vite
+- Instant hot module reloading (HMR)
+- Optimized production builds
+- Modern SCSS compilation
 
 🎮 **VR Experience**
 - Low-poly 3D models optimized for performance
